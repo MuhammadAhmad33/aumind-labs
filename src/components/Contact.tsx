@@ -6,7 +6,7 @@ import { Calendar, Send, MessageCircle } from "lucide-react";
 const Contact = () => {
   return (
     <section className="py-24 px-6 bg-background-subtle">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Let's Build Something <span className="bg-gradient-primary bg-clip-text text-transparent">Together</span>

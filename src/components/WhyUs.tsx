@@ -55,7 +55,7 @@ const WhyUs = () => {
 
   return (
     <section className="py-24 px-6 bg-background-subtle">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Why <span className="bg-gradient-primary bg-clip-text text-transparent">AUMind Labs?</span>
@@ -67,23 +67,27 @@ const WhyUs = () => {
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {highlights.map((highlight, index) => (
-            <div key={index} className="glass-card group hover:glow-primary transition-glass">
+            <div 
+              key={index} 
+              className="glass-card group hover:glow-primary transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1 animate-fade-in"
+              style={{ animationDelay: `${index * 0.15}s` }}
+            >
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
-                  <div className="p-4 bg-gradient-primary rounded-3xl">
+                  <div className="p-4 bg-gradient-primary rounded-3xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                     <highlight.icon className="w-8 h-8 text-background" />
                   </div>
                 </div>
                 
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-semibold">{highlight.title}</h3>
+                    <h3 className="text-2xl font-semibold group-hover:text-primary transition-colors duration-300">{highlight.title}</h3>
                     <div className="text-right">
-                      <div className="text-3xl font-bold text-primary">{highlight.stat}</div>
+                      <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">{highlight.stat}</div>
                       <div className="text-sm text-muted-foreground">{highlight.statLabel}</div>
                     </div>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">{highlight.description}</p>
+                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">{highlight.description}</p>
                 </div>
               </div>
             </div>
@@ -99,14 +103,18 @@ const WhyUs = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {impactStats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="glass-card hover:glow-accent transition-glass">
-                <div className="inline-flex p-4 bg-gradient-primary rounded-3xl mb-6">
+            <div 
+              key={index} 
+              className="text-center group animate-fade-in-up"
+              style={{ animationDelay: `${(index + 4) * 0.15}s` }}
+            >
+              <div className="glass-card hover:glow-accent transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+                <div className="inline-flex p-4 bg-gradient-primary rounded-3xl mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                   <stat.icon className="w-8 h-8 text-background" />
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.number}</div>
-                <div className="text-lg font-semibold mb-2">{stat.label}</div>
-                <div className="text-sm text-muted-foreground">{stat.description}</div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">{stat.number}</div>
+                <div className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{stat.label}</div>
+                <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">{stat.description}</div>
               </div>
             </div>
           ))}

@@ -65,7 +65,7 @@ const Portfolio = () => {
 
   return (
     <section className="py-24 px-6 bg-background-subtle">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Case <span className="bg-gradient-primary bg-clip-text text-transparent">Studies</span>

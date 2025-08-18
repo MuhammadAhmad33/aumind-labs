@@ -3,7 +3,7 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="py-16 px-6 border-t border-border">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">

@@ -4,8 +4,8 @@ import umairAvatar from "@/assets/umair-avatar.jpg";
 const About = () => {
   return (
     <section className="py-24 px-6">
-      <div className="container mx-auto max-w-6xl">
-        <div className="glass-card">
+      <div className="container mx-auto max-w-7xl">
+        <div className="glass-card animate-fade-in">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Meet the <span className="bg-gradient-primary bg-clip-text text-transparent">Founders</span>
@@ -17,12 +17,12 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="flex items-center space-x-6">
+            <div className="space-y-8 animate-slide-in-left">
+              <div className="flex items-center space-x-6 group">
                 <img 
                   src={ahmadAvatar} 
                   alt="Ahmad - Co-founder" 
-                  className="w-20 h-20 rounded-2xl object-cover glow-primary"
+                  className="w-20 h-20 rounded-2xl object-cover glow-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-2"
                 />
                 <div>
                   <h3 className="text-2xl font-semibold">Ahmad</h3>
@@ -30,11 +30,11 @@ const About = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-6 group">
                 <img 
                   src={umairAvatar} 
                   alt="Umair - Co-founder" 
-                  className="w-20 h-20 rounded-2xl object-cover glow-accent"
+                  className="w-20 h-20 rounded-2xl object-cover glow-accent transition-all duration-300 group-hover:scale-110 group-hover:-rotate-2"
                 />
                 <div>
                   <h3 className="text-2xl font-semibold">Umair</h3>
@@ -43,7 +43,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 animate-slide-in-right">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 We started AUMind Labs after years of building our own startups and working 
                 with ambitious founders who needed more than cookie-cutter solutions.
@@ -56,7 +56,7 @@ const About = () => {
               </p>
 
               <div className="pt-4">
-                <div className="inline-block px-4 py-2 bg-gradient-primary rounded-full text-sm font-medium text-background">
+                <div className="inline-block px-4 py-2 bg-gradient-primary rounded-full text-sm font-medium text-background hover:scale-105 transition-transform duration-300 cursor-default">
                   Personal. Fast. Results-driven.
                 </div>
               </div>
