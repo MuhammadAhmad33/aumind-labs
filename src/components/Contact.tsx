@@ -1,9 +1,36 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Calendar, Send, MessageCircle } from "lucide-react";
+import { Calendar, Send, MessageCircle, ArrowRight } from "lucide-react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    console.log('Form submitted:', formData);
+    setIsSubmitting(false);
+    // Reset form or show success message
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <section className="py-24 px-6 bg-background-subtle">
       <div className="container mx-auto max-w-5xl">
@@ -17,44 +44,68 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="glass-card">
+        <div className="glass-card animate-fade-in">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="space-y-6">
               <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
               
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-2 gap-4">
                   <Input 
+                    name="firstName"
                     placeholder="First name" 
-                    className="contact-input"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    required
+                    className="bg-glass border-glass-border focus:border-primary transition-all duration-300 hover:border-primary/50"
                   />
                   <Input 
+                    name="lastName"
                     placeholder="Last name" 
-                    className="contact-input"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    required
+                    className="bg-glass border-glass-border focus:border-primary transition-all duration-300 hover:border-primary/50"
                   />
                 </div>
                 
                 <Input 
                   type="email" 
+                  name="email"
                   placeholder="Email address" 
-                  className="contact-input"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="bg-glass border-glass-border focus:border-primary transition-all duration-300 hover:border-primary/50"
                 />
                 
                 <Input 
+                  name="company"
                   placeholder="Company name" 
-                  className="contact-input"
+                  value={formData.company}
+                  onChange={handleChange}
+                  className="bg-glass border-glass-border focus:border-primary transition-all duration-300 hover:border-primary/50"
                 />
                 
                 <Textarea 
+                  name="message"
                   placeholder="Tell us about your project..."
                   rows={4}
-                  className="contact-textarea"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="bg-glass border-glass-border focus:border-primary transition-all duration-300 hover:border-primary/50 resize-none"
                 />
                 
-                <Button className="w-full hero-cta">
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full hero-cta group transition-all duration-300 hover:scale-[1.02]"
+                >
                   <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                 </Button>
               </form>
             </div>
@@ -68,13 +119,18 @@ const Contact = () => {
                   timeline, and how we can help you achieve your goals.
                 </p>
                 
-                <Button size="lg" variant="outline" className="w-full calendly-cta">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="w-full calendly-cta group transition-all duration-300 hover:scale-[1.02] hover:bg-primary hover:text-background"
+                >
                   <Calendar className="w-5 h-5 mr-2" />
                   Schedule Free Consultation
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                 </Button>
               </div>
 
-              <div className="border-t border-border pt-8">
+              <div className="border-t border-glass-border pt-8">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <MessageCircle className="w-5 h-5 text-primary" />
@@ -84,10 +140,22 @@ const Contact = () => {
                   <div className="space-y-2">
                     <div className="text-sm font-medium">What happens next?</div>
                     <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• We'll review your project requirements</li>
-                      <li>• Set up a strategy call within 48 hours</li>
-                      <li>• Provide a detailed proposal and timeline</li>
-                      <li>• Start building your solution</li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
+                        We'll review your project requirements
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
+                        Set up a strategy call within 48 hours
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
+                        Provide a detailed proposal and timeline
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
+                        Start building your solution
+                      </li>
                     </ul>
                   </div>
                 </div>

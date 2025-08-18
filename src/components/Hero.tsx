@@ -3,7 +3,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden" style={{ transform: 'translateZ(0)' }}>
       <div className="hero-glow"></div>
       
       <div className="container mx-auto max-w-7xl text-center z-10">

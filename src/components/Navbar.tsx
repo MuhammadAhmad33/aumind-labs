@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useActiveSection } from "@/hooks/useScrollAnimation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+  const activeSection = useActiveSection();
 
   useEffect(() => {
     setMounted(true);
@@ -51,9 +53,16 @@ const Navbar = () => {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-foreground hover:text-primary transition-colors font-medium"
+                  className={`transition-colors font-medium relative ${
+                    activeSection === item.href.slice(1)
+                      ? 'text-primary'
+                      : 'text-foreground hover:text-primary'
+                  }`}
                 >
                   {item.name}
+                  {activeSection === item.href.slice(1) && (
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"></div>
+                  )}
                 </button>
               ))}
             </div>

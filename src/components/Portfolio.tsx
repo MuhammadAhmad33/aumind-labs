@@ -68,10 +68,10 @@ const Portfolio = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Case <span className="bg-gradient-primary bg-clip-text text-transparent">Studies</span>
+            Our <span className="bg-gradient-primary bg-clip-text text-transparent">Work</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Real projects, real results. See how we've helped startups scale and optimize their operations.
+            Real solutions for real businesses. Here's how we've helped founders like you turn ideas into success stories.
           </p>
         </div>
 
