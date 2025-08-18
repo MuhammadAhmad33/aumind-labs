@@ -1,27 +1,55 @@
-import { Zap, Users, DollarSign } from "lucide-react";
+import { Shield, Zap, DollarSign, Users, TrendingUp, Clock } from "lucide-react";
 
 const WhyUs = () => {
   const highlights = [
     {
       icon: Zap,
       title: "Fast & Agile",
-      description: "We move at startup speed. Quick iterations, rapid deployment, and constant communication.",
-      stat: "2-3x",
-      statLabel: "Faster delivery"
+      description: "No bureaucracy, no delays. We move at startup speed because we understand the urgency of launching.",
+      stat: "60%",
+      statLabel: "Faster Delivery"
     },
     {
       icon: Users,
-      title: "Founder-driven",
-      description: "Work directly with the founders. No account managers, no miscommunication, just results.",
-      stat: "100%",
-      statLabel: "Direct access"
+      title: "Founder-Driven",
+      description: "Direct access to Ahmad & Umair. No account managers, no miscommunication - just founders helping founders.",
+      stat: "30+",
+      statLabel: "Happy Clients"
     },
     {
       icon: DollarSign,
       title: "Cost-Effective",
-      description: "Get enterprise-quality work without the enterprise overhead. Smart solutions, fair pricing.",
-      stat: "40-60%",
-      statLabel: "Cost savings"
+      description: "Premium quality without the agency markup. You get enterprise-level solutions at startup-friendly rates.",
+      stat: "50%",
+      statLabel: "Cost Savings"
+    },
+    {
+      icon: Shield,
+      title: "Proven Results",
+      description: "50+ successful launches with 99% on-time delivery rate and millions in revenue generated for our clients.",
+      stat: "99%",
+      statLabel: "Success Rate"
+    }
+  ];
+
+  const impactStats = [
+    {
+      icon: TrendingUp,
+      number: "50+",
+      label: "Projects Delivered",
+      description: "Successfully launched startups"
+    },
+    {
+      icon: Clock,
+      number: "2-8 Weeks",
+      label: "Average Delivery",
+      description: "From concept to launch"
+    },
+    {
+      icon: DollarSign,
+      number: "$50M+",
+      label: "Revenue Generated",
+      description: "For our startup clients"
     }
   ];
 
@@ -30,29 +58,55 @@ const WhyUs = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Why <span className="bg-gradient-primary bg-clip-text text-transparent">AUMind Labs</span>?
+            Why <span className="bg-gradient-primary bg-clip-text text-transparent">AUMind Labs?</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're not just building software — we're building partnerships with ambitious founders.
+            We're not just another dev shop. We're founders who've been in your shoes, building solutions that actually move the needle.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
           {highlights.map((highlight, index) => (
-            <div key={index} className="text-center group">
-              <div className="glass-card hover:glow-accent transition-glass">
-                <div className="mb-6">
-                  <div className="inline-flex p-4 bg-gradient-primary rounded-3xl mb-4">
+            <div key={index} className="glass-card group hover:glow-primary transition-glass">
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0">
+                  <div className="p-4 bg-gradient-primary rounded-3xl">
                     <highlight.icon className="w-8 h-8 text-background" />
-                  </div>
-                  <div className="mb-4">
-                    <div className="text-4xl font-bold text-primary">{highlight.stat}</div>
-                    <div className="text-sm text-muted-foreground">{highlight.statLabel}</div>
                   </div>
                 </div>
                 
-                <h3 className="text-2xl font-semibold mb-4">{highlight.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{highlight.description}</p>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-2xl font-semibold">{highlight.title}</h3>
+                    <div className="text-right">
+                      <div className="text-3xl font-bold text-primary">{highlight.stat}</div>
+                      <div className="text-sm text-muted-foreground">{highlight.statLabel}</div>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">{highlight.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Impact metrics */}
+        <div className="text-center mb-12">
+          <h3 className="text-3xl font-bold mb-6">
+            <span className="bg-gradient-primary bg-clip-text text-transparent">Proven Impact</span>
+          </h3>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          {impactStats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="glass-card hover:glow-accent transition-glass">
+                <div className="inline-flex p-4 bg-gradient-primary rounded-3xl mb-6">
+                  <stat.icon className="w-8 h-8 text-background" />
+                </div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.number}</div>
+                <div className="text-lg font-semibold mb-2">{stat.label}</div>
+                <div className="text-sm text-muted-foreground">{stat.description}</div>
               </div>
             </div>
           ))}
