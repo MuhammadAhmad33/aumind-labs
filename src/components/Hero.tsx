@@ -20,19 +20,38 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-fade-in delay-300">
-              Two founder-engineers helping startups move faster with custom web, mobile, 
+              Three founder-engineers helping startups move faster with custom web, mobile, 
               and automation solutions.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 animate-fade-in delay-500">
-            <Button size="lg" className="hero-cta group hover:scale-105 transition-all duration-300">
+            <Button 
+              size="lg" 
+              className="hero-cta group hover:scale-105 transition-all duration-300"
+              onClick={() => {
+                const element = document.querySelector('#contact');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               <Calendar className="w-5 h-5 mr-2" />
               Book a Free Consult
               <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
             
-            <Button variant="secondary" size="lg" className="hero-secondary hover:scale-105 transition-all duration-300">
+            <Button 
+              variant="secondary" 
+              size="lg" 
+              className="hero-secondary hover:scale-105 transition-all duration-300"
+              onClick={() => {
+                const element = document.querySelector('#portfolio');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               See Our Work
             </Button>
           </div>

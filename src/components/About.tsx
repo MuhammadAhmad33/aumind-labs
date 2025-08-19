@@ -1,5 +1,4 @@
-import ahmadAvatar from "@/assets/ahmad-avatar.jpg";
-import umairAvatar from "@/assets/umair-avatar.jpg";
+import { Users, Code, Lightbulb } from "lucide-react";
 
 const About = () => {
   return (
@@ -8,7 +7,7 @@ const About = () => {
         <div className="glass-card animate-fade-in">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Meet the <span className="bg-gradient-primary bg-clip-text text-transparent">Founders</span>
+              Meet the <span className="bg-gradient-primary bg-clip-text text-transparent">Team</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We're not just another dev shop. We're startup founders who understand 
@@ -19,39 +18,45 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-slide-in-left">
               <div className="flex items-center space-x-6 group">
-                <img 
-                  src={ahmadAvatar} 
-                  alt="Ahmad - Co-founder" 
-                  className="w-20 h-20 rounded-2xl object-cover glow-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-2"
-                />
+                <div className="w-20 h-20 rounded-2xl bg-gradient-primary flex items-center justify-center glow-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-2">
+                  <Code className="w-10 h-10 text-background" />
+                </div>
                 <div>
-                  <h3 className="text-2xl font-semibold">Ahmad</h3>
-                  <p className="text-primary font-medium">Co-founder & Tech Lead</p>
+                  <h3 className="text-2xl font-semibold">Tech Lead</h3>
+                  <p className="text-primary font-medium">Full-Stack Engineering</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-6 group">
-                <img 
-                  src={umairAvatar} 
-                  alt="Umair - Co-founder" 
-                  className="w-20 h-20 rounded-2xl object-cover glow-accent transition-all duration-300 group-hover:scale-110 group-hover:-rotate-2"
-                />
+                <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center glow-accent transition-all duration-300 group-hover:scale-110 group-hover:-rotate-2">
+                  <Lightbulb className="w-10 h-10 text-background" />
+                </div>
                 <div>
-                  <h3 className="text-2xl font-semibold">Umair</h3>
-                  <p className="text-accent font-medium">Co-founder & Strategy Lead</p>
+                  <h3 className="text-2xl font-semibold">Strategy Lead</h3>
+                  <p className="text-accent font-medium">Product & Business</p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-6 group">
+                <div className="w-20 h-20 rounded-2xl bg-gradient-secondary flex items-center justify-center glow-secondary transition-all duration-300 group-hover:scale-110 group-hover:rotate-1">
+                  <Users className="w-10 h-10 text-background" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold">Operations Lead</h3>
+                  <p className="text-secondary font-medium">Growth & Client Success</p>
                 </div>
               </div>
             </div>
 
             <div className="space-y-6 animate-slide-in-right">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We started AUMind Labs after years of building our own startups and working 
+                Our three co-founders started AUMind Labs after years of building their own startups and working 
                 with ambitious founders who needed more than cookie-cutter solutions.
               </p>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Our boutique approach means you get direct access to the people building 
-                your product — no account managers, no middlemen, just two engineers who 
+                your product — no account managers, no middlemen, just three engineers who 
                 care about your success as much as you do.
               </p>
 
