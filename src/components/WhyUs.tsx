@@ -12,7 +12,7 @@ const WhyUs = () => {
     {
       icon: Users,
       title: "Founder-Driven",
-      description: "Direct access to Ahmad & Umair. No account managers, no miscommunication - just founders helping founders.",
+      description: "Direct access to our co-founders. No account managers, no miscommunication — just founders helping founders.",
       stat: "30+",
       statLabel: "Happy Clients"
     },

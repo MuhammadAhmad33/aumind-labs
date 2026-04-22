@@ -14,7 +14,7 @@ const Testimonials = () => {
       name: "Marcus Rodriguez",
       role: "Founder, GrowthMetrics",
       company: "Analytics Platform",
-      content: "Ahmad and Umair didn't just build what we asked for - they suggested improvements that saved us months of iterations. True partners.",
+      content: "The AUMind team didn't just build what we asked for - they suggested improvements that saved us months of iterations. True partners.",
       rating: 5,
       result: "500% user engagement boost"
     },
@@ -22,7 +22,7 @@ const Testimonials = () => {
       name: "Emily Watson",
       role: "CTO, RetailSync",
       company: "E-commerce Automation",
-      content: "Best development experience we've had. No bureaucracy, just two brilliant engineers who care about your success as much as you do.",
+      content: "Best development experience we've had. No bureaucracy, just brilliant engineers who care about your success as much as you do.",
       rating: 5,
       result: "$2M+ revenue automated"
     }
