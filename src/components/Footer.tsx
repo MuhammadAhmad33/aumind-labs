@@ -2,11 +2,11 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-16 px-6 border-t border-border">
+    <footer className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 border-t border-border">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10 md:mb-12">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="col-span-2 md:col-span-2">
             <h3 className="text-2xl font-bold mb-4">
               <span className="bg-gradient-primary bg-clip-text text-transparent">AUMind Labs</span>
             </h3>
@@ -46,7 +46,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border">
           <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-            © 2024 AUMind Labs. Built with passion by Ahmad & Umair.
+            © 2024 AUMind Labs. Built with care by our founder team.
           </div>
           
           <div className="flex space-x-4">
