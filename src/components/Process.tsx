@@ -9,25 +9,25 @@ const Process = () => {
       icon: MessageSquare,
       title: "Discovery Call",
       description: "We understand your vision, requirements, and business goals in a detailed discussion.",
-      duration: "1-2 days"
+      duration: "Step 01 · Kickoff"
     },
     {
       icon: CheckCircle,
       title: "Strategy & Planning",
       description: "We create a detailed roadmap, choose the right tech stack, and plan the development phases.",
-      duration: "3-5 days"
+      duration: "Step 02 · Blueprint"
     },
     {
       icon: Code,
       title: "Development & Testing", 
       description: "We build your solution with regular updates, testing each feature to ensure quality.",
-      duration: "2-8 weeks"
+      duration: "Step 03 · Build Sprint"
     },
     {
       icon: Rocket,
       title: "Launch & Support",
       description: "We deploy your solution and provide ongoing support to ensure smooth operations.",
-      duration: "Ongoing"
+      duration: "Step 04 · Liftoff & Beyond"
     }
   ];
 
