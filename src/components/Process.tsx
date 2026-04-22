@@ -1,4 +1,4 @@
-import { CheckCircle, MessageSquare, Code, Rocket } from "lucide-react";
+import { CheckCircle, MessageSquare, Code, Rocket, Clock } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Process = () => {
