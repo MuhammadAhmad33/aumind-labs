@@ -32,13 +32,13 @@ const Process = () => {
   ];
 
   return (
-    <section className="py-24 px-6 bg-background-subtle overflow-hidden">
+    <section className="section-padding bg-background-subtle overflow-hidden">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
             Our <span className="bg-gradient-primary bg-clip-text text-transparent">Process</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             From initial idea to successful launch, we follow a proven process that ensures your project succeeds.
           </p>
         </div>
@@ -47,7 +47,7 @@ const Process = () => {
           {/* Connection line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary-glow transform -translate-x-1/2 hidden md:block"></div>
           
-          <div className="space-y-16">
+          <div className="space-y-8 md:space-y-16">
             {steps.map((step, index) => (
               <div 
                 key={index} 
@@ -60,24 +60,24 @@ const Process = () => {
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}>
                   {/* Content */}
-                  <div className={`flex-1 ${
+                  <div className={`flex-1 w-full ${
                     index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'
                   }`}>
-                    <div className="glass-card group hover:glow-primary transition-all duration-500 transform hover:scale-[1.02]">
+                    <div className="glass-card group hover:shadow-elevated hover:glow-primary transition-all duration-500 transform hover:-translate-y-1">
                       <div className={`flex items-start space-x-4 ${
                         index % 2 === 0 ? '' : 'md:flex-row-reverse md:space-x-reverse md:space-x-4'
                       }`}>
-                        <div className="p-4 bg-gradient-primary rounded-3xl group-hover:scale-110 transition-transform duration-300">
-                          <step.icon className="w-8 h-8 text-background" />
+                        <div className="flex-shrink-0 p-3 md:p-4 bg-gradient-primary rounded-2xl md:rounded-3xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                          <step.icon className="w-6 h-6 md:w-8 md:h-8 text-primary-foreground" />
                         </div>
-                        <div className={index % 2 === 0 ? '' : 'md:text-right'}>
-                          <div className="flex items-center gap-3 mb-3">
-                            <h3 className="text-2xl font-semibold">{step.title}</h3>
-                            <span className="text-sm bg-primary/20 text-primary px-3 py-1 rounded-full">
+                        <div className={`flex-1 min-w-0 ${index % 2 === 0 ? '' : 'md:text-right'}`}>
+                          <div className={`flex flex-wrap items-center gap-2 md:gap-3 mb-2 md:mb-3 ${index % 2 === 0 ? '' : 'md:justify-end'}`}>
+                            <h3 className="text-lg md:text-2xl font-semibold">{step.title}</h3>
+                            <span className="text-xs md:text-sm bg-primary/15 text-primary px-2.5 py-1 rounded-full font-medium">
                               {step.duration}
                             </span>
                           </div>
-                          <p className="text-muted-foreground leading-relaxed">
+                          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                             {step.description}
                           </p>
                         </div>
@@ -87,7 +87,7 @@ const Process = () => {
 
                   {/* Step number */}
                   <div className="relative z-10 hidden md:block">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-background font-bold text-lg shadow-lg">
+                    <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg shadow-lg">
                       {index + 1}
                     </div>
                   </div>
