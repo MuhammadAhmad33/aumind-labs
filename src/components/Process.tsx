@@ -73,7 +73,8 @@ const Process = () => {
                         <div className={`flex-1 min-w-0 ${index % 2 === 0 ? '' : 'md:text-right'}`}>
                           <div className={`flex flex-wrap items-center gap-2 md:gap-3 mb-2 md:mb-3 ${index % 2 === 0 ? '' : 'md:justify-end'}`}>
                             <h3 className="text-lg md:text-2xl font-semibold">{step.title}</h3>
-                            <span className="text-xs md:text-sm bg-primary/15 text-primary px-2.5 py-1 rounded-full font-medium">
+                            <span className="inline-flex items-center gap-1.5 text-[10px] md:text-xs uppercase tracking-[0.12em] font-semibold bg-primary/10 text-primary border border-primary/20 px-2.5 py-1 rounded-full backdrop-blur-sm">
+                              <Clock className="w-3 h-3 md:w-3.5 md:h-3.5" />
                               {step.duration}
                             </span>
                           </div>
