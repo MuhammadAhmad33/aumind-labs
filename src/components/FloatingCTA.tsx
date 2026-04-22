@@ -24,10 +24,10 @@ const FloatingCTA = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50">
       <div className={`transition-all duration-300 ${isExpanded ? 'mb-4' : ''}`}>
         {isExpanded && (
-          <div className="glass-card p-4 mb-4 w-64 animate-fade-in">
+          <div className="glass-card p-4 mb-4 w-[calc(100vw-3rem)] max-w-xs animate-fade-in">
             <h4 className="font-semibold mb-2">Ready to build something amazing?</h4>
             <p className="text-sm text-muted-foreground mb-3">
               Let's discuss your project and see how we can help you succeed.

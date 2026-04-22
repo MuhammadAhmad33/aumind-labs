@@ -64,52 +64,52 @@ const Portfolio = () => {
   };
 
   return (
-    <section className="py-24 px-6 bg-background-subtle">
+    <section className="section-padding bg-background-subtle">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
             Our <span className="bg-gradient-primary bg-clip-text text-transparent">Work</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             Real solutions for real businesses. Here's how we've helped founders like you turn ideas into success stories.
           </p>
         </div>
 
         {/* Main Slider */}
         <div className="relative">
-          <div className="glass-card overflow-hidden">
-            <div className="relative h-[600px] md:h-[500px]">
+          <div className="glass-card overflow-hidden p-4 md:p-8">
+            <div className="relative min-h-[640px] sm:min-h-[560px] md:h-[500px]">
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 transition-transform duration-500 ease-in-out ${
-                    index === currentSlide ? 'translate-x-0' : 
-                    index < currentSlide ? '-translate-x-full' : 'translate-x-full'
+                  className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+                    index === currentSlide ? 'translate-x-0 opacity-100' : 
+                    index < currentSlide ? '-translate-x-full opacity-0' : 'translate-x-full opacity-0'
                   }`}
                 >
-                  <div className="grid md:grid-cols-2 gap-8 h-full">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 h-full">
                     {/* Project Image */}
-                    <div className="relative overflow-hidden rounded-2xl">
+                    <div className="relative overflow-hidden rounded-2xl h-48 sm:h-64 md:h-full">
                       <img 
                         src={project.image} 
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                       />
-                      <div className="absolute top-4 right-4">
-                        <div className="px-4 py-2 bg-background/90 backdrop-blur-sm rounded-full text-sm font-medium text-primary">
+                      <div className="absolute top-3 right-3 md:top-4 md:right-4">
+                        <div className="px-3 py-1.5 md:px-4 md:py-2 bg-background/90 backdrop-blur-sm rounded-full text-xs md:text-sm font-medium text-primary shadow-lg">
                           {project.metrics}
                         </div>
                       </div>
                     </div>
                     
                     {/* Project Info */}
-                    <div className="flex flex-col justify-center space-y-6 p-6">
+                    <div className="flex flex-col justify-center space-y-4 md:space-y-6 p-2 md:p-6">
                       <div>
-                        <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed mb-4">
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4">{project.title}</h3>
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-3 md:mb-4">
                           {project.description}
                         </p>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed hidden sm:block">
                           {project.details}
                         </p>
                       </div>
@@ -118,19 +118,19 @@ const Portfolio = () => {
                         {project.tags.map((tag, idx) => (
                           <span 
                             key={idx} 
-                            className="px-3 py-1 bg-secondary rounded-full text-sm font-medium"
+                            className="px-2.5 py-1 md:px-3 bg-secondary rounded-full text-xs md:text-sm font-medium"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
 
-                      <div className="flex space-x-4">
+                      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                         <Button className="flex-1 hero-cta">
                           <ExternalLink className="w-4 h-4 mr-2" />
                           Live Demo
                         </Button>
-                        <Button variant="outline">
+                        <Button variant="outline" className="flex-1 sm:flex-none">
                           <Github className="w-4 h-4 mr-2" />
                           Code
                         </Button>
@@ -146,54 +146,57 @@ const Portfolio = () => {
           <Button
             variant="outline"
             size="icon"
-            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-glass border-glass-border hover:glow-primary"
+            className="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 rounded-full bg-glass border-glass-border hover:glow-primary z-10 h-9 w-9 md:h-10 md:w-10"
             onClick={prevSlide}
+            aria-label="Previous project"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </Button>
           
           <Button
             variant="outline"
             size="icon"
-            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-glass border-glass-border hover:glow-primary"
+            className="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 rounded-full bg-glass border-glass-border hover:glow-primary z-10 h-9 w-9 md:h-10 md:w-10"
             onClick={nextSlide}
+            aria-label="Next project"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </Button>
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center space-x-3 mt-8">
+        <div className="flex justify-center space-x-2 md:space-x-3 mt-6 md:mt-8">
           {projects.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
+              aria-label={`Go to project ${index + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
                 index === currentSlide 
-                  ? 'bg-primary scale-125' 
-                  : 'bg-muted-foreground hover:bg-primary/50'
+                  ? 'bg-primary w-8' 
+                  : 'bg-muted-foreground/40 hover:bg-primary/50 w-2'
               }`}
             />
           ))}
         </div>
 
         {/* Quick Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center glass p-6 rounded-2xl">
-            <div className="text-3xl font-bold text-primary mb-2">15+</div>
-            <div className="text-sm text-muted-foreground">Projects Completed</div>
+        <div className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+          <div className="text-center glass p-4 md:p-6 rounded-2xl hover:glow-primary transition-all duration-300 hover:-translate-y-1">
+            <div className="text-2xl md:text-3xl font-bold text-primary mb-1 md:mb-2">15+</div>
+            <div className="text-xs md:text-sm text-muted-foreground">Projects Completed</div>
           </div>
-          <div className="text-center glass p-6 rounded-2xl">
-            <div className="text-3xl font-bold text-accent mb-2">100%</div>
-            <div className="text-sm text-muted-foreground">On-Time Delivery</div>
+          <div className="text-center glass p-4 md:p-6 rounded-2xl hover:glow-accent transition-all duration-300 hover:-translate-y-1">
+            <div className="text-2xl md:text-3xl font-bold text-accent mb-1 md:mb-2">100%</div>
+            <div className="text-xs md:text-sm text-muted-foreground">On-Time Delivery</div>
           </div>
-          <div className="text-center glass p-6 rounded-2xl">
-            <div className="text-3xl font-bold text-primary-glow mb-2">50%</div>
-            <div className="text-sm text-muted-foreground">Avg. Performance Boost</div>
+          <div className="text-center glass p-4 md:p-6 rounded-2xl hover:glow-primary transition-all duration-300 hover:-translate-y-1">
+            <div className="text-2xl md:text-3xl font-bold text-primary-glow mb-1 md:mb-2">50%</div>
+            <div className="text-xs md:text-sm text-muted-foreground">Avg. Performance Boost</div>
           </div>
-          <div className="text-center glass p-6 rounded-2xl">
-            <div className="text-3xl font-bold text-accent-glow mb-2">24h</div>
-            <div className="text-sm text-muted-foreground">Support Response</div>
+          <div className="text-center glass p-4 md:p-6 rounded-2xl hover:glow-accent transition-all duration-300 hover:-translate-y-1">
+            <div className="text-2xl md:text-3xl font-bold text-accent-glow mb-1 md:mb-2">24h</div>
+            <div className="text-xs md:text-sm text-muted-foreground">Support Response</div>
           </div>
         </div>
       </div>
