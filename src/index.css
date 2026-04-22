@@ -2,125 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
-/* AUMind Labs Design System - Dark theme with neon accents and glassmorphism */
+/* AUMind Labs Design System — Refined professional palette */
 
 @layer base {
   :root {
-    /* Light theme colors */
-    --background: 0 0% 100%;
-    --background-subtle: 220 15% 98%;
-    --foreground: 220 15% 10%;
+    /* Light theme — clean editorial */
+    --background: 220 25% 98%;
+    --background-subtle: 220 25% 96%;
+    --foreground: 222 47% 11%;
 
-    /* Glass effect backgrounds */
-    --glass: 220 15% 95% / 0.8;
-    --glass-border: 220 20% 85% / 0.3;
+    --glass: 220 30% 100% / 0.7;
+    --glass-border: 220 25% 88% / 0.6;
 
-    /* Card styling */
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 10%;
+    --card-foreground: 222 47% 11%;
 
-    /* Popover styling */
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 10%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Neon teal primary */
-    --primary: 180 100% 40%;
+    /* Refined indigo primary */
+    --primary: 234 89% 56%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 180 100% 50%;
+    --primary-glow: 234 89% 66%;
 
-    /* Secondary colors */
-    --secondary: 220 15% 95%;
-    --secondary-foreground: 220 15% 10%;
+    --secondary: 220 20% 94%;
+    --secondary-foreground: 222 47% 15%;
 
-    /* Muted colors */
-    --muted: 220 15% 95%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 220 20% 94%;
+    --muted-foreground: 220 10% 40%;
 
-    /* Electric blue accent */
-    --accent: 220 100% 50%;
+    /* Sophisticated cyan accent */
+    --accent: 188 94% 42%;
     --accent-foreground: 0 0% 100%;
-    --accent-glow: 220 100% 60%;
+    --accent-glow: 188 94% 55%;
 
-    /* Error states */
-    --destructive: 0 85% 60%;
+    --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders and inputs */
-    --border: 220 15% 85%;
-    --input: 220 15% 95%;
-    --ring: 180 100% 40%;
+    --border: 220 20% 88%;
+    --input: 220 20% 94%;
+    --ring: 234 89% 56%;
 
-    /* Border radius */
     --radius: 1rem;
 
-    /* Custom gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(180 100% 40%), hsl(220 100% 50%));
-    --gradient-subtle: linear-gradient(135deg, hsl(220 15% 98%), hsl(220 15% 95%));
-    --gradient-glow: radial-gradient(circle at center, hsl(180 100% 40% / 0.2), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(234 89% 56%), hsl(188 94% 42%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 25% 98%), hsl(220 25% 96%));
+    --gradient-glow: radial-gradient(circle at center, hsl(234 89% 56% / 0.18), transparent 70%);
+    --gradient-mesh: radial-gradient(at 20% 20%, hsl(234 89% 56% / 0.12) 0px, transparent 50%),
+                     radial-gradient(at 80% 60%, hsl(188 94% 42% / 0.10) 0px, transparent 50%);
 
-    /* Shadows */
-    --shadow-glass: 0 8px 32px 0 hsl(220 15% 10% / 0.1);
-    --shadow-glow: 0 0 30px hsl(180 100% 40% / 0.3);
-    --shadow-accent-glow: 0 0 30px hsl(220 100% 50% / 0.3);
+    --shadow-glass: 0 8px 32px 0 hsl(222 47% 11% / 0.06);
+    --shadow-glow: 0 10px 40px -10px hsl(234 89% 56% / 0.35);
+    --shadow-accent-glow: 0 10px 40px -10px hsl(188 94% 42% / 0.35);
+    --shadow-elevated: 0 20px 60px -20px hsl(222 47% 11% / 0.15);
 
-    /* Animations */
     --transition-glass: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    /* Dark theme colors */
-    --background: 220 15% 8%;
-    --background-subtle: 220 15% 10%;
-    --foreground: 220 15% 95%;
+    --background: 222 47% 6%;
+    --background-subtle: 222 40% 9%;
+    --foreground: 220 20% 96%;
 
-    /* Glass effect backgrounds */
-    --glass: 220 15% 12% / 0.8;
-    --glass-border: 220 20% 25% / 0.2;
+    --glass: 222 40% 12% / 0.7;
+    --glass-border: 220 25% 30% / 0.4;
 
-    /* Card styling */
-    --card: 220 15% 11%;
-    --card-foreground: 220 15% 95%;
+    --card: 222 40% 10%;
+    --card-foreground: 220 20% 96%;
 
-    /* Popover styling */
-    --popover: 220 15% 11%;
-    --popover-foreground: 220 15% 95%;
+    --popover: 222 40% 10%;
+    --popover-foreground: 220 20% 96%;
 
-    /* Neon teal primary */
-    --primary: 180 100% 50%;
-    --primary-foreground: 220 15% 8%;
-    --primary-glow: 180 100% 60%;
+    --primary: 234 89% 66%;
+    --primary-foreground: 222 47% 6%;
+    --primary-glow: 234 89% 75%;
 
-    /* Secondary colors */
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 220 15% 95%;
+    --secondary: 222 35% 15%;
+    --secondary-foreground: 220 20% 96%;
 
-    /* Muted colors */
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 10% 65%;
+    --muted: 222 35% 15%;
+    --muted-foreground: 220 15% 65%;
 
-    /* Electric blue accent */
-    --accent: 220 100% 60%;
-    --accent-foreground: 220 15% 95%;
-    --accent-glow: 220 100% 70%;
+    --accent: 188 94% 55%;
+    --accent-foreground: 222 47% 6%;
+    --accent-glow: 188 94% 65%;
 
-    /* Error states */
-    --destructive: 0 85% 60%;
-    --destructive-foreground: 220 15% 95%;
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 220 20% 96%;
 
-    /* Borders and inputs */
-    --border: 220 15% 20%;
-    --input: 220 15% 15%;
-    --ring: 180 100% 50%;
+    --border: 222 30% 20%;
+    --input: 222 35% 15%;
+    --ring: 234 89% 66%;
 
-    /* Custom gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50%), hsl(220 100% 60%));
-    --gradient-subtle: linear-gradient(135deg, hsl(220 15% 12%), hsl(220 15% 8%));
-    --gradient-glow: radial-gradient(circle at center, hsl(180 100% 50% / 0.3), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(234 89% 66%), hsl(188 94% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(222 40% 9%), hsl(222 47% 6%));
+    --gradient-glow: radial-gradient(circle at center, hsl(234 89% 66% / 0.25), transparent 70%);
+    --gradient-mesh: radial-gradient(at 20% 20%, hsl(234 89% 66% / 0.18) 0px, transparent 50%),
+                     radial-gradient(at 80% 60%, hsl(188 94% 55% / 0.15) 0px, transparent 50%);
 
-    /* Shadows */
-    --shadow-glass: 0 8px 32px 0 hsl(220 15% 5% / 0.37);
-    --shadow-glow: 0 0 30px hsl(180 100% 50% / 0.3);
-    --shadow-accent-glow: 0 0 30px hsl(220 100% 60% / 0.3);
+    --shadow-glass: 0 8px 32px 0 hsl(222 47% 2% / 0.5);
+    --shadow-glow: 0 10px 40px -10px hsl(234 89% 66% / 0.5);
+    --shadow-accent-glow: 0 10px 40px -10px hsl(188 94% 55% / 0.5);
+    --shadow-elevated: 0 20px 60px -20px hsl(0 0% 0% / 0.6);
   }
 }
 
@@ -129,8 +112,14 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-inter antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   /* Glass morphism utilities */
@@ -140,7 +129,7 @@
   }
 
   .glass-card {
-    @apply glass rounded-3xl p-8;
+    @apply glass rounded-2xl md:rounded-3xl p-6 md:p-8;
   }
 
   .glow-primary {
@@ -149,6 +138,10 @@
 
   .glow-accent {
     box-shadow: var(--shadow-accent-glow);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
   }
 
   /* Gradient backgrounds */
@@ -164,9 +157,17 @@
     background: var(--gradient-glow);
   }
 
-  /* Smooth transitions */
+  .bg-gradient-mesh {
+    background: var(--gradient-mesh);
+  }
+
   .transition-glass {
     transition: var(--transition-glass);
+  }
+
+  /* Section spacing helper — responsive padding */
+  .section-padding {
+    @apply py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8;
   }
 }
 
@@ -178,28 +179,26 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
+    width: min(600px, 90vw);
+    height: min(600px, 90vw);
     background: var(--gradient-glow);
     border-radius: 50%;
     z-index: -1;
-    opacity: 0.6;
+    opacity: 0.7;
   }
 
-  /* Custom button variants */
   .hero-cta {
-    @apply bg-gradient-primary text-background font-semibold glow-primary hover:scale-105;
+    @apply bg-gradient-primary text-primary-foreground font-semibold glow-primary hover:scale-105 transition-all duration-300;
   }
 
   .hero-secondary {
-    @apply bg-glass border-glass-border text-foreground backdrop-blur-xl hover:bg-secondary hover:glow-accent;
+    @apply bg-glass border border-glass-border text-foreground backdrop-blur-xl hover:bg-secondary hover:glow-accent transition-all duration-300;
   }
 
   .calendly-cta {
-    @apply bg-glass border-glass-border text-foreground backdrop-blur-xl hover:bg-accent hover:text-accent-foreground hover:glow-accent;
+    @apply bg-glass border border-glass-border text-foreground backdrop-blur-xl hover:bg-accent hover:text-accent-foreground hover:glow-accent;
   }
 
-  /* Input styling */
   .contact-input {
     @apply bg-glass border-glass-border backdrop-blur-xl rounded-xl focus:ring-primary focus:border-primary;
   }

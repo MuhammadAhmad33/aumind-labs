@@ -3,29 +3,29 @@ import { ArrowRight, Calendar } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden" style={{ transform: 'translateZ(0)' }}>
+    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-16 overflow-hidden bg-gradient-mesh" style={{ transform: 'translateZ(0)' }}>
       <div className="hero-glow"></div>
       
-      <div className="container mx-auto max-w-7xl text-center z-10">
-        <div className="space-y-8">
+      <div className="container mx-auto max-w-6xl text-center z-10">
+        <div className="space-y-6 sm:space-y-8">
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight animate-fade-in-up">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-fade-in-up">
               <span className="block">Launch, Scale,</span>
-              <span className="block bg-gradient-primary bg-clip-text text-transparent">
+              <span className="block bg-gradient-primary bg-clip-text text-transparent pb-2">
                 Automate
               </span>
-              <span className="block text-2xl md:text-3xl font-medium text-muted-foreground mt-4">
+              <span className="block text-lg sm:text-2xl md:text-3xl font-medium text-muted-foreground mt-3 sm:mt-4">
                 — with AUMind Labs
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-fade-in delay-300">
+            <p className="text-base sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in delay-300 px-2">
               Three founder-engineers helping startups move faster with custom web, mobile, 
               and automation solutions.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 animate-fade-in delay-500">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4 sm:pt-8 animate-fade-in delay-500 px-4">
             <Button 
               size="lg" 
               className="hero-cta group hover:scale-105 transition-all duration-300"
