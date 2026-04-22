@@ -29,47 +29,47 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-24 px-6">
+    <section className="section-padding">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
             What <span className="bg-gradient-primary bg-clip-text text-transparent">Founders</span> Say
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             Don't just take our word for it. Here's what startup founders say about working with AUMind Labs.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className="glass-card group hover:glow-primary transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1 animate-fade-in"
+              className="glass-card group hover:shadow-elevated hover:glow-primary transition-all duration-500 transform hover:-translate-y-1 animate-fade-in"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-primary text-primary" />
                 ))}
               </div>
               
               <div className="relative mb-6">
-                <Quote className="absolute -top-2 -left-2 w-8 h-8 text-primary/20" />
-                <p className="text-muted-foreground leading-relaxed pl-6 italic">
+                <Quote className="absolute -top-2 -left-2 w-7 h-7 md:w-8 md:h-8 text-primary/20" />
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed pl-5 md:pl-6 italic">
                   "{testimonial.content}"
                 </p>
               </div>
 
-              <div className="border-t border-glass-border pt-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="font-semibold">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                    <div className="text-xs text-accent font-medium">{testimonial.company}</div>
+              <div className="border-t border-glass-border pt-5 md:pt-6">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <div className="font-semibold text-sm md:text-base truncate">{testimonial.name}</div>
+                    <div className="text-xs md:text-sm text-muted-foreground truncate">{testimonial.role}</div>
+                    <div className="text-[10px] md:text-xs text-accent font-medium truncate">{testimonial.company}</div>
                   </div>
-                  <div className="text-right">
-                    <div className="text-sm font-semibold text-primary">{testimonial.result}</div>
-                    <div className="text-xs text-muted-foreground">Impact</div>
+                  <div className="text-right flex-shrink-0">
+                    <div className="text-xs md:text-sm font-semibold text-primary">{testimonial.result}</div>
+                    <div className="text-[10px] md:text-xs text-muted-foreground">Impact</div>
                   </div>
                 </div>
               </div>

@@ -28,7 +28,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4 sm:pt-8 animate-fade-in delay-500 px-4">
             <Button 
               size="lg" 
-              className="hero-cta group hover:scale-105 transition-all duration-300"
+              className="hero-cta group hover:scale-105 transition-all duration-300 w-full sm:w-auto"
               onClick={() => {
                 const element = document.querySelector('#contact');
                 if (element) {
@@ -44,7 +44,7 @@ const Hero = () => {
             <Button 
               variant="secondary" 
               size="lg" 
-              className="hero-secondary hover:scale-105 transition-all duration-300"
+              className="hero-secondary hover:scale-105 transition-all duration-300 w-full sm:w-auto"
               onClick={() => {
                 const element = document.querySelector('#portfolio');
                 if (element) {

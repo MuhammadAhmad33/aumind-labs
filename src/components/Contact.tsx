@@ -32,20 +32,20 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-24 px-6 bg-background-subtle">
+    <section className="section-padding bg-background-subtle">
       <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
             Let's Build Something <span className="bg-gradient-primary bg-clip-text text-transparent">Together</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             Ready to accelerate your startup? Book a free consultation or send us a message. 
             We'll get back to you within 24 hours.
           </p>
         </div>
 
         <div className="glass-card animate-fade-in">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Form */}
             <div className="space-y-6">
               <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
