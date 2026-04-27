@@ -15,8 +15,8 @@ const Footer = () => {
               with custom web, mobile, and automation solutions.
             </p>
             <div className="text-sm text-muted-foreground">
-              <div>📧 hello@aumindlabs.dev</div>
-              <div className="mt-1">🌐 aumindlabs.dev</div>
+              <div>📧 hello@aumindlabs.com</div>
+              <div className="mt-1">🌐 aumindlabs.com</div>
             </div>
           </div>
 
