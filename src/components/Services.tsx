@@ -6,25 +6,29 @@ const Services = () => {
       icon: Code,
       title: "Web Development",
       description: "Custom web applications built with modern frameworks. From MVPs to enterprise solutions.",
-      features: ["React & Next.js", "Full-stack development", "API integrations", "Performance optimization"]
+      features: ["React & Next.js", "Full-stack development", "API integrations", "Performance optimization"],
+      color: "hsl(var(--icon-indigo))",
     },
     {
       icon: Smartphone,
       title: "Mobile Development",
       description: "Native iOS and Android apps, plus cross-platform solutions that don't compromise on quality.",
-      features: ["React Native", "Native iOS/Android", "App Store deployment", "User experience focus"]
+      features: ["React Native", "Native iOS/Android", "App Store deployment", "User experience focus"],
+      color: "hsl(var(--icon-emerald))",
     },
     {
       icon: Zap,
       title: "Automations & Data",
       description: "Streamline operations with custom automations, data pipelines, and intelligent workflows.",
-      features: ["Workflow automation", "Data processing", "API orchestration", "Business intelligence"]
+      features: ["Workflow automation", "Data processing", "API orchestration", "Business intelligence"],
+      color: "hsl(var(--icon-amber))",
     },
     {
       icon: Wrench,
       title: "Custom Solutions",
       description: "Unique challenges require unique solutions. We build exactly what your business needs.",
-      features: ["Tailored development", "System integration", "Legacy modernization", "Consulting & strategy"]
+      features: ["Tailored development", "System integration", "Legacy modernization", "Consulting & strategy"],
+      color: "hsl(var(--icon-violet))",
     }
   ];
 
