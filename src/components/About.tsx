@@ -8,6 +8,7 @@ const About = () => {
       role: "Co-Founder",
       description: "Architects scalable systems and ships production code that powers every client launch.",
       gradient: "from-primary to-accent",
+      color: "hsl(var(--icon-indigo))",
     },
     {
       icon: Lightbulb,
@@ -15,6 +16,7 @@ const About = () => {
       role: "Co-Founder",
       description: "Shapes product vision, validates ideas, and turns ambiguous problems into clear roadmaps.",
       gradient: "from-accent to-primary-glow",
+      color: "hsl(var(--icon-amber))",
     },
     {
       icon: Rocket,
@@ -22,6 +24,7 @@ const About = () => {
       role: "Co-Founder",
       description: "Drives client success, delivery cadence, and the partnerships that scale startups beyond launch.",
       gradient: "from-primary-glow to-primary",
+      color: "hsl(var(--icon-rose))",
     },
   ];
 
@@ -63,7 +66,7 @@ const About = () => {
               <div className="relative">
                 {/* Icon */}
                 <div className="mb-5 md:mb-6 group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-500">
-                  <founder.icon className="w-9 h-9 md:w-10 md:h-10 text-primary" strokeWidth={1.5} />
+                  <founder.icon className="w-9 h-9 md:w-10 md:h-10" style={{ color: founder.color }} strokeWidth={1.5} />
                 </div>
 
                 {/* Role label */}

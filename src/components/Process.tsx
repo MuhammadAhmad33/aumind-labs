@@ -9,25 +9,29 @@ const Process = () => {
       icon: MessageSquare,
       title: "Discovery Call",
       description: "We understand your vision, requirements, and business goals in a detailed discussion.",
-      duration: "1-2 days"
+      duration: "1-2 days",
+      color: "hsl(var(--icon-sky))",
     },
     {
       icon: CheckCircle,
       title: "Strategy & Planning",
       description: "We create a detailed roadmap, choose the right tech stack, and plan the development phases.",
-      duration: "3-5 days"
+      duration: "3-5 days",
+      color: "hsl(var(--icon-emerald))",
     },
     {
       icon: Code,
       title: "Development & Testing", 
       description: "We build your solution with regular updates, testing each feature to ensure quality.",
-      duration: "2-8 weeks"
+      duration: "2-8 weeks",
+      color: "hsl(var(--icon-violet))",
     },
     {
       icon: Rocket,
       title: "Launch & Support",
       description: "We deploy your solution and provide ongoing support to ensure smooth operations.",
-      duration: "Ongoing"
+      duration: "Ongoing",
+      color: "hsl(var(--icon-rose))",
     }
   ];
 
@@ -68,7 +72,7 @@ const Process = () => {
                         index % 2 === 0 ? '' : 'md:flex-row-reverse md:space-x-reverse md:space-x-4'
                       }`}>
                         <div className="flex-shrink-0 group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-300">
-                          <step.icon className="w-8 h-8 md:w-10 md:h-10 text-primary" strokeWidth={1.5} />
+                          <step.icon className="w-8 h-8 md:w-10 md:h-10" style={{ color: step.color }} strokeWidth={1.5} />
                         </div>
                         <div className={`flex-1 min-w-0 ${index % 2 === 0 ? '' : 'md:text-right'}`}>
                           <div className={`flex flex-wrap items-center gap-2 md:gap-3 mb-2 md:mb-3 ${index % 2 === 0 ? '' : 'md:justify-end'}`}>

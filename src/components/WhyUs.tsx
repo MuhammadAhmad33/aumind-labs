@@ -7,28 +7,32 @@ const WhyUs = () => {
       title: "Fast & Agile",
       description: "No bureaucracy, no delays. We move at startup speed because we understand the urgency of launching.",
       stat: "60%",
-      statLabel: "Faster Delivery"
+      statLabel: "Faster Delivery",
+      color: "hsl(var(--icon-amber))",
     },
     {
       icon: Users,
       title: "Founder-Driven",
       description: "Direct access to our co-founders. No account managers, no miscommunication — just founders helping founders.",
       stat: "30+",
-      statLabel: "Happy Clients"
+      statLabel: "Happy Clients",
+      color: "hsl(var(--icon-violet))",
     },
     {
       icon: DollarSign,
       title: "Cost-Effective",
       description: "Premium quality without the agency markup. You get enterprise-level solutions at startup-friendly rates.",
       stat: "50%",
-      statLabel: "Cost Savings"
+      statLabel: "Cost Savings",
+      color: "hsl(var(--icon-emerald))",
     },
     {
       icon: Shield,
       title: "Proven Results",
       description: "50+ successful launches with 99% on-time delivery rate and millions in revenue generated for our clients.",
       stat: "99%",
-      statLabel: "Success Rate"
+      statLabel: "Success Rate",
+      color: "hsl(var(--icon-sky))",
     }
   ];
 
@@ -37,19 +41,22 @@ const WhyUs = () => {
       icon: TrendingUp,
       number: "50+",
       label: "Projects Delivered",
-      description: "Successfully launched startups"
+      description: "Successfully launched startups",
+      color: "hsl(var(--icon-rose))",
     },
     {
       icon: Clock,
       number: "2-8 Weeks",
       label: "Average Delivery",
-      description: "From concept to launch"
+      description: "From concept to launch",
+      color: "hsl(var(--icon-cyan))",
     },
     {
       icon: DollarSign,
       number: "$50M+",
       label: "Revenue Generated",
-      description: "For our startup clients"
+      description: "For our startup clients",
+      color: "hsl(var(--icon-emerald))",
     }
   ];
 
@@ -74,7 +81,7 @@ const WhyUs = () => {
             >
               <div className="flex items-start space-x-4 md:space-x-6">
                 <div className="flex-shrink-0 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300">
-                  <highlight.icon className="w-8 h-8 md:w-10 md:h-10 text-primary" strokeWidth={1.5} />
+                  <highlight.icon className="w-8 h-8 md:w-10 md:h-10" style={{ color: highlight.color }} strokeWidth={1.5} />
                 </div>
                 
                 <div className="flex-1 min-w-0">
@@ -108,7 +115,7 @@ const WhyUs = () => {
             >
               <div className="glass-card hover:shadow-elevated hover:glow-accent transition-all duration-500 transform hover:-translate-y-2">
                 <div className="inline-flex mb-4 md:mb-6 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300">
-                  <stat.icon className="w-9 h-9 md:w-11 md:h-11 text-primary" strokeWidth={1.5} />
+                  <stat.icon className="w-9 h-9 md:w-11 md:h-11" style={{ color: stat.color }} strokeWidth={1.5} />
                 </div>
                 <div className="text-3xl md:text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">{stat.number}</div>
                 <div className="text-base md:text-lg font-semibold mb-1 md:mb-2 group-hover:text-primary transition-colors duration-300">{stat.label}</div>

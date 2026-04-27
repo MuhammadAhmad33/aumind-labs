@@ -6,25 +6,29 @@ const Services = () => {
       icon: Code,
       title: "Web Development",
       description: "Custom web applications built with modern frameworks. From MVPs to enterprise solutions.",
-      features: ["React & Next.js", "Full-stack development", "API integrations", "Performance optimization"]
+      features: ["React & Next.js", "Full-stack development", "API integrations", "Performance optimization"],
+      color: "hsl(var(--icon-indigo))",
     },
     {
       icon: Smartphone,
       title: "Mobile Development",
       description: "Native iOS and Android apps, plus cross-platform solutions that don't compromise on quality.",
-      features: ["React Native", "Native iOS/Android", "App Store deployment", "User experience focus"]
+      features: ["React Native", "Native iOS/Android", "App Store deployment", "User experience focus"],
+      color: "hsl(var(--icon-emerald))",
     },
     {
       icon: Zap,
       title: "Automations & Data",
       description: "Streamline operations with custom automations, data pipelines, and intelligent workflows.",
-      features: ["Workflow automation", "Data processing", "API orchestration", "Business intelligence"]
+      features: ["Workflow automation", "Data processing", "API orchestration", "Business intelligence"],
+      color: "hsl(var(--icon-amber))",
     },
     {
       icon: Wrench,
       title: "Custom Solutions",
       description: "Unique challenges require unique solutions. We build exactly what your business needs.",
-      features: ["Tailored development", "System integration", "Legacy modernization", "Consulting & strategy"]
+      features: ["Tailored development", "System integration", "Legacy modernization", "Consulting & strategy"],
+      color: "hsl(var(--icon-violet))",
     }
   ];
 
@@ -49,7 +53,7 @@ const Services = () => {
             >
               <div className="flex items-start space-x-4 mb-5 md:mb-6">
                 <div className="flex-shrink-0 group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-300">
-                  <service.icon className="w-8 h-8 md:w-10 md:h-10 text-primary" strokeWidth={1.5} />
+                  <service.icon className="w-8 h-8 md:w-10 md:h-10" style={{ color: service.color }} strokeWidth={1.5} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-xl md:text-2xl font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
