@@ -48,8 +48,8 @@ const Services = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-start space-x-4 mb-5 md:mb-6">
-                <div className="flex-shrink-0 p-3 bg-gradient-primary rounded-2xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                  <service.icon className="w-6 h-6 md:w-8 md:h-8 text-primary-foreground" />
+                <div className="flex-shrink-0 group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-300">
+                  <service.icon className="w-8 h-8 md:w-10 md:h-10 text-primary" strokeWidth={1.5} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-xl md:text-2xl font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
