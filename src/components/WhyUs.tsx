@@ -7,28 +7,32 @@ const WhyUs = () => {
       title: "Fast & Agile",
       description: "No bureaucracy, no delays. We move at startup speed because we understand the urgency of launching.",
       stat: "60%",
-      statLabel: "Faster Delivery"
+      statLabel: "Faster Delivery",
+      color: "hsl(var(--icon-amber))",
     },
     {
       icon: Users,
       title: "Founder-Driven",
       description: "Direct access to our co-founders. No account managers, no miscommunication — just founders helping founders.",
       stat: "30+",
-      statLabel: "Happy Clients"
+      statLabel: "Happy Clients",
+      color: "hsl(var(--icon-violet))",
     },
     {
       icon: DollarSign,
       title: "Cost-Effective",
       description: "Premium quality without the agency markup. You get enterprise-level solutions at startup-friendly rates.",
       stat: "50%",
-      statLabel: "Cost Savings"
+      statLabel: "Cost Savings",
+      color: "hsl(var(--icon-emerald))",
     },
     {
       icon: Shield,
       title: "Proven Results",
       description: "50+ successful launches with 99% on-time delivery rate and millions in revenue generated for our clients.",
       stat: "99%",
-      statLabel: "Success Rate"
+      statLabel: "Success Rate",
+      color: "hsl(var(--icon-sky))",
     }
   ];
 
@@ -37,19 +41,22 @@ const WhyUs = () => {
       icon: TrendingUp,
       number: "50+",
       label: "Projects Delivered",
-      description: "Successfully launched startups"
+      description: "Successfully launched startups",
+      color: "hsl(var(--icon-rose))",
     },
     {
       icon: Clock,
       number: "2-8 Weeks",
       label: "Average Delivery",
-      description: "From concept to launch"
+      description: "From concept to launch",
+      color: "hsl(var(--icon-cyan))",
     },
     {
       icon: DollarSign,
       number: "$50M+",
       label: "Revenue Generated",
-      description: "For our startup clients"
+      description: "For our startup clients",
+      color: "hsl(var(--icon-emerald))",
     }
   ];
 
