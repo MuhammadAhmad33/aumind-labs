@@ -62,8 +62,8 @@ const About = () => {
 
               <div className="relative">
                 {/* Icon */}
-                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br ${founder.gradient} flex items-center justify-center mb-5 md:mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-lg`}>
-                  <founder.icon className="w-7 h-7 md:w-8 md:h-8 text-primary-foreground" strokeWidth={2} />
+                <div className="mb-5 md:mb-6 group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-500">
+                  <founder.icon className="w-9 h-9 md:w-10 md:h-10 text-primary" strokeWidth={1.5} />
                 </div>
 
                 {/* Role label */}
