@@ -56,6 +56,15 @@
     --shadow-accent-glow: 0 10px 40px -10px hsl(188 94% 42% / 0.35);
     --shadow-elevated: 0 20px 60px -20px hsl(222 47% 11% / 0.15);
 
+    /* Icon accent palette — distinct, brand-aligned */
+    --icon-indigo: 234 89% 56%;
+    --icon-cyan: 188 94% 42%;
+    --icon-violet: 262 83% 58%;
+    --icon-emerald: 160 84% 39%;
+    --icon-amber: 32 95% 50%;
+    --icon-rose: 346 84% 56%;
+    --icon-sky: 199 89% 48%;
+
     --transition-glass: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -104,6 +113,14 @@
     --shadow-glow: 0 10px 40px -10px hsl(234 89% 66% / 0.5);
     --shadow-accent-glow: 0 10px 40px -10px hsl(188 94% 55% / 0.5);
     --shadow-elevated: 0 20px 60px -20px hsl(0 0% 0% / 0.6);
+
+    --icon-indigo: 234 89% 70%;
+    --icon-cyan: 188 94% 60%;
+    --icon-violet: 262 90% 72%;
+    --icon-emerald: 160 70% 55%;
+    --icon-amber: 38 95% 62%;
+    --icon-rose: 346 90% 68%;
+    --icon-sky: 199 92% 62%;
   }
 }
 
