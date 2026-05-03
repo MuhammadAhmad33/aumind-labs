@@ -1,76 +1,57 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 border-t border-border">
-      <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10 md:mb-12">
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">
-              <span className="bg-gradient-primary bg-clip-text text-transparent">AUMind Labs</span>
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-md">
-              Boutique tech studio helping startups launch, scale, and automate 
-              with custom web, mobile, and automation solutions.
+    <footer className="bg-background text-foreground border-t border-border">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 py-16">
+        {/* Massive wordmark */}
+        <div className="font-display text-[18vw] md:text-[14vw] leading-none tracking-tight pb-10 border-b border-border">
+          aumind<span className="text-primary">labs.</span>
+        </div>
+
+        <div className="grid grid-cols-12 gap-8 mt-12">
+          <div className="col-span-12 md:col-span-5">
+            <p className="font-display text-2xl md:text-3xl leading-snug max-w-md">
+              A boutique studio of founder-engineers. We launch, scale, and automate
+              software for ambitious teams.
             </p>
-            <div className="text-sm text-muted-foreground">
-              <div>📧 hello@aumindlabs.com</div>
-              <div className="mt-1">🌐 aumindlabs.com</div>
-            </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">Web Development</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Mobile Apps</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Automations</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Custom Solutions</a></li>
+          <div className="col-span-6 md:col-span-2">
+            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft mb-4">Studio</div>
+            <ul className="space-y-2 text-base">
+              <li><a href="#about" className="link-underline">About</a></li>
+              <li><a href="#services" className="link-underline">Services</a></li>
+              <li><a href="#portfolio" className="link-underline">Magic Work</a></li>
             </ul>
           </div>
 
-          {/* Company */}
-          <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Portfolio</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Contact</a></li>
+          <div className="col-span-6 md:col-span-2">
+            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft mb-4">Connect</div>
+            <ul className="space-y-2 text-base">
+              <li><a href="#contact" className="link-underline">Contact</a></li>
+              <li><a href="#" className="link-underline">LinkedIn</a></li>
+              <li><a href="#" className="link-underline">GitHub</a></li>
             </ul>
+          </div>
+
+          <div className="col-span-12 md:col-span-3">
+            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft mb-4">Get in touch</div>
+            <a href="mailto:hello@aumindlabs.com" className="inline-flex items-center gap-2 font-display text-2xl hover:text-primary transition-colors">
+              hello@aumindlabs.com <ArrowUpRight className="w-5 h-5" />
+            </a>
+            <div className="text-sm text-ink-soft mt-3">aumindlabs.com</div>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border">
-          <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-            © 2024 AUMind Labs. Built with care by our founder team.
+        <div className="flex items-center justify-between pt-10 mt-12 border-t border-border flex-wrap gap-4">
+          <div className="font-mono text-xs uppercase tracking-[0.18em] text-ink-soft">
+            © 2026 AUMind Labs · All rights reserved
           </div>
-          
-          <div className="flex space-x-4">
-            <a 
-              href="#" 
-              className="p-2 hover:bg-glass rounded-lg transition-colors group"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary" />
-            </a>
-            <a 
-              href="#" 
-              className="p-2 hover:bg-glass rounded-lg transition-colors group"
-              aria-label="GitHub"
-            >
-              <Github className="w-5 h-5 text-muted-foreground group-hover:text-primary" />
-            </a>
-            <a 
-              href="#" 
-              className="p-2 hover:bg-glass rounded-lg transition-colors group"
-              aria-label="Twitter"
-            >
-              <Twitter className="w-5 h-5 text-muted-foreground group-hover:text-primary" />
-            </a>
+          <div className="flex items-center gap-2">
+            <a href="#" aria-label="LinkedIn" className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"><Linkedin className="w-4 h-4" /></a>
+            <a href="#" aria-label="GitHub" className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"><Github className="w-4 h-4" /></a>
+            <a href="#" aria-label="Twitter" className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"><Twitter className="w-4 h-4" /></a>
           </div>
         </div>
       </div>

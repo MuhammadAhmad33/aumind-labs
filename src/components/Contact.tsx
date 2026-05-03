@@ -1,167 +1,83 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { ArrowUpRight, Calendar } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Calendar, Send, MessageCircle, ArrowRight } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    company: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    console.log('Form submitted:', formData);
-    setIsSubmitting(false);
-    // Reset form or show success message
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setSending(true);
+    await new Promise((r) => setTimeout(r, 800));
+    setSending(false);
   };
 
   return (
-    <section className="section-padding bg-background-subtle">
-      <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
-            Let's Build Something <span className="bg-gradient-primary bg-clip-text text-transparent">Together</span>
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
-            Ready to accelerate your startup? Book a free consultation or send us a message. 
-            We'll get back to you within 24 hours.
-          </p>
-        </div>
+    <section id="contact" className="section-padding bg-foreground text-background relative overflow-hidden">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-12 gap-8 md:gap-12">
+          {/* Left: bold pitch */}
+          <div className="col-span-12 md:col-span-6">
+            <div className="eyebrow mb-6 text-background/70">Let's build</div>
+            <h2 className="display-xl mb-10">
+              Have an <em className="italic text-primary">idea?</em>
+              <br />Let's ship it.
+            </h2>
+            <p className="text-lg md:text-xl text-background/75 max-w-md mb-10 font-display">
+              Tell us where you're stuck. We'll reply within 24 hours with a clear next step —
+              not a sales script.
+            </p>
 
-        <div className="glass-card animate-fade-in">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            {/* Contact Form */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <Input 
-                    name="firstName"
-                    placeholder="First name" 
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    required
-                    className="bg-glass border-glass-border focus:border-primary transition-all duration-300 hover:border-primary/50"
-                  />
-                  <Input 
-                    name="lastName"
-                    placeholder="Last name" 
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    required
-                    className="bg-glass border-glass-border focus:border-primary transition-all duration-300 hover:border-primary/50"
-                  />
-                </div>
-                
-                <Input 
-                  type="email" 
-                  name="email"
-                  placeholder="Email address" 
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="bg-glass border-glass-border focus:border-primary transition-all duration-300 hover:border-primary/50"
-                />
-                
-                <Input 
-                  name="company"
-                  placeholder="Company name" 
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="bg-glass border-glass-border focus:border-primary transition-all duration-300 hover:border-primary/50"
-                />
-                
-                <Textarea 
-                  name="message"
-                  placeholder="Tell us about your project..."
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="bg-glass border-glass-border focus:border-primary transition-all duration-300 hover:border-primary/50 resize-none"
-                />
-                
-                <Button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="w-full hero-cta group transition-all duration-300 hover:scale-[1.02]"
-                >
-                  <Send className="w-4 h-4 mr-2" />
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </form>
-            </div>
+            <a
+              href="#"
+              onClick={(e) => e.preventDefault()}
+              className="inline-flex items-center gap-3 rounded-full bg-background text-foreground px-6 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              <Calendar className="w-4 h-4" />
+              Book a free 30-min consult
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
 
-            {/* CTA Section */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-semibold mb-4">Prefer to talk first?</h3>
-                <p className="text-muted-foreground mb-6">
-                  Book a free 30-minute consultation where we'll discuss your project, 
-                  timeline, and how we can help you achieve your goals.
-                </p>
-                
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="w-full calendly-cta group transition-all duration-300 hover:scale-[1.02] hover:bg-primary hover:text-background"
-                >
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Schedule Free Consultation
-                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </div>
-
-              <div className="border-t border-glass-border pt-8">
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <MessageCircle className="w-5 h-5 text-primary" />
-                    <span className="text-sm text-muted-foreground">Average response time: 4 hours</span>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <div className="text-sm font-medium">What happens next?</div>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      <li className="flex items-center">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
-                        We'll review your project requirements
-                      </li>
-                      <li className="flex items-center">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
-                        Set up a strategy call within 48 hours
-                      </li>
-                      <li className="flex items-center">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
-                        Provide a detailed proposal and timeline
-                      </li>
-                      <li className="flex items-center">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
-                        Start building your solution
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+            <div className="mt-16 space-y-2 font-mono text-xs uppercase tracking-[0.18em] text-background/60">
+              <div>hello@aumindlabs.com</div>
+              <div>aumindlabs.com</div>
+              <div>Remote · Worldwide</div>
             </div>
           </div>
+
+          {/* Right: form */}
+          <form onSubmit={onSubmit} className="col-span-12 md:col-span-6 space-y-5">
+            <div className="grid grid-cols-2 gap-5">
+              <Input
+                name="name" placeholder="Your name" value={form.name} onChange={onChange} required
+                className="bg-transparent border-0 border-b border-background/30 rounded-none px-0 h-12 text-base placeholder:text-background/50 focus-visible:ring-0 focus-visible:border-primary"
+              />
+              <Input
+                name="company" placeholder="Company" value={form.company} onChange={onChange}
+                className="bg-transparent border-0 border-b border-background/30 rounded-none px-0 h-12 text-base placeholder:text-background/50 focus-visible:ring-0 focus-visible:border-primary"
+              />
+            </div>
+            <Input
+              type="email" name="email" placeholder="Email address" value={form.email} onChange={onChange} required
+              className="bg-transparent border-0 border-b border-background/30 rounded-none px-0 h-12 text-base placeholder:text-background/50 focus-visible:ring-0 focus-visible:border-primary"
+            />
+            <Textarea
+              name="message" placeholder="What are you building?" rows={6} value={form.message} onChange={onChange} required
+              className="bg-transparent border-0 border-b border-background/30 rounded-none px-0 text-base placeholder:text-background/50 focus-visible:ring-0 focus-visible:border-primary resize-none pt-4"
+            />
+            <button
+              type="submit" disabled={sending}
+              className="group inline-flex items-center gap-3 rounded-full bg-primary text-primary-foreground px-6 py-3 hover:bg-background hover:text-foreground transition-colors disabled:opacity-60"
+            >
+              {sending ? "Sending…" : "Send message"}
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />
+            </button>
+          </form>
         </div>
       </div>
     </section>
