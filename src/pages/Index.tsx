@@ -13,28 +13,18 @@ import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
       <Navbar />
-      <Hero />
-      <section id="about">
-        <About />
-      </section>
-      <section id="services">
+      <main>
+        <Hero />
+        <section id="about"><About /></section>
         <Services />
-      </section>
-      <section id="why-us">
         <WhyUs />
-      </section>
-      <Process />
-      <section id="portfolio">
+        <Process />
         <Portfolio />
-      </section>
-      <section id="testimonials">
         <Testimonials />
-      </section>
-      <section id="contact">
         <Contact />
-      </section>
+      </main>
       <Footer />
       <FloatingCTA />
       <BackToTop />
