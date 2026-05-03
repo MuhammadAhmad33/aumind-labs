@@ -1,109 +1,43 @@
-import { Code2, Lightbulb, Rocket, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const About = () => {
-  const founders = [
-    {
-      icon: Code2,
-      title: "Engineering",
-      role: "Co-Founder",
-      description: "Architects scalable systems and ships production code that powers every client launch.",
-      gradient: "from-primary to-accent",
-      color: "hsl(var(--icon-indigo))",
-    },
-    {
-      icon: Lightbulb,
-      title: "Product & Strategy",
-      role: "Co-Founder",
-      description: "Shapes product vision, validates ideas, and turns ambiguous problems into clear roadmaps.",
-      gradient: "from-accent to-primary-glow",
-      color: "hsl(var(--icon-amber))",
-    },
-    {
-      icon: Rocket,
-      title: "Growth & Operations",
-      role: "Co-Founder",
-      description: "Drives client success, delivery cadence, and the partnerships that scale startups beyond launch.",
-      gradient: "from-primary-glow to-primary",
-      color: "hsl(var(--icon-rose))",
-    },
-  ];
-
   return (
-    <section className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-mesh pointer-events-none" />
-
-      <div className="container mx-auto max-w-7xl relative">
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-6 text-sm font-medium text-muted-foreground">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span>Founder-led, by design</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
-            Three founders.{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
-              One mission.
-            </span>
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-            AUMind Labs was built by three co-founders who've launched their own
-            startups — and now help others do the same. No account managers, no
-            handoffs. You work directly with the people building your product.
-          </p>
-        </div>
-
-        {/* Founder cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-12 md:mb-16">
-          {founders.map((founder, index) => (
-            <div
-              key={index}
-              className="group relative glass-card hover:shadow-elevated transition-all duration-500 hover:-translate-y-1 animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.12}s` }}
-            >
-              {/* Subtle gradient accent on hover */}
-              <div className={`absolute inset-0 rounded-2xl md:rounded-3xl bg-gradient-to-br ${founder.gradient} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500 pointer-events-none`} />
-
-              <div className="relative">
-                {/* Icon */}
-                <div className="mb-5 md:mb-6 group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-500">
-                  <founder.icon className="w-9 h-9 md:w-10 md:h-10" style={{ color: founder.color }} strokeWidth={1.5} />
-                </div>
-
-                {/* Role label */}
-                <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-2">
-                  {founder.role}
-                </div>
-
-                {/* Title */}
-                <h3 className="text-xl md:text-2xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
-                  {founder.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {founder.description}
-                </p>
-              </div>
+    <section className="section-padding bg-background">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-12 gap-6 md:gap-10">
+          <div className="col-span-12 md:col-span-4">
+            <div className="eyebrow mb-6">The Studio</div>
+            <div className="font-mono text-xs uppercase tracking-[0.2em] text-ink-soft space-y-2">
+              <div>Est. 2024</div>
+              <div>Remote-first</div>
+              <div>Three co-founders</div>
+              <div>Boutique by design</div>
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* Closing statement */}
-        <div className="max-w-3xl mx-auto text-center animate-fade-in" style={{ animationDelay: '0.5s' }}>
-          <div className="glass-card">
-            <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed mb-5">
-              Our boutique team means every project gets senior attention from day
-              one. We've shipped products across SaaS, fintech, e-commerce, and
-              automation — and we bring that pattern recognition to every build.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-              {["Personal", "Fast", "Results-driven"].map((tag) => (
-                <span
-                  key={tag}
-                  className="px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-gradient-primary text-primary-foreground hover:scale-105 transition-transform duration-300 cursor-default"
-                >
-                  {tag}
-                </span>
+          <div className="col-span-12 md:col-span-8">
+            <h2 className="display-lg mb-10">
+              We're a <em className="italic text-primary">tiny</em> studio of
+              founder-engineers shipping software the way startups actually need it —
+              fast, opinionated, and built to scale.
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border rounded-3xl overflow-hidden border border-border">
+              {[
+                { label: "Engineering", role: "Co-Founder", line: "Architects systems that don't break at scale." },
+                { label: "Product", role: "Co-Founder", line: "Turns fuzzy ideas into clear, shippable plans." },
+                { label: "Growth", role: "Co-Founder", line: "Drives delivery, partnerships, and what's next." },
+              ].map((f) => (
+                <div key={f.label} className="bg-paper p-6 md:p-8 group hover:bg-foreground hover:text-background transition-colors duration-500">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/60 group-hover:text-background/60 mb-6">
+                    {f.role}
+                  </div>
+                  <div className="font-display text-3xl md:text-4xl mb-4">{f.label}</div>
+                  <p className="text-sm leading-relaxed text-ink-soft group-hover:text-background/80">
+                    {f.line}
+                  </p>
+                  <ArrowUpRight className="w-5 h-5 mt-8 opacity-40 group-hover:opacity-100 group-hover:rotate-45 transition-all" />
+                </div>
               ))}
             </div>
           </div>

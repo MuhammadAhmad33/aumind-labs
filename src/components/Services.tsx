@@ -1,75 +1,86 @@
-import { Code, Smartphone, Zap, Wrench } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+
+const services = [
+  {
+    n: "01",
+    title: "Web Engineering",
+    desc: "Production-grade web apps, marketing sites, and dashboards built on modern React stacks.",
+    tags: ["React / Next.js", "TypeScript", "Edge & Serverless"],
+  },
+  {
+    n: "02",
+    title: "Mobile Development",
+    desc: "iOS, Android, and cross-platform apps that feel native and ship to the stores cleanly.",
+    tags: ["React Native", "Swift / Kotlin", "App Store Ops"],
+  },
+  {
+    n: "03",
+    title: "AI & Automation",
+    desc: "LLM features, intelligent workflows, and back-office automation that replace manual ops.",
+    tags: ["OpenAI / Claude", "n8n / Zapier", "Custom agents"],
+  },
+  {
+    n: "04",
+    title: "Product Strategy",
+    desc: "Discovery, scoping, and roadmaps for founders who need a sparring partner — not a vendor.",
+    tags: ["MVP scoping", "Tech audits", "0→1 roadmaps"],
+  },
+];
 
 const Services = () => {
-  const services = [
-    {
-      icon: Code,
-      title: "Web Development",
-      description: "Custom web applications built with modern frameworks. From MVPs to enterprise solutions.",
-      features: ["React & Next.js", "Full-stack development", "API integrations", "Performance optimization"],
-      color: "hsl(var(--icon-indigo))",
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile Development",
-      description: "Native iOS and Android apps, plus cross-platform solutions that don't compromise on quality.",
-      features: ["React Native", "Native iOS/Android", "App Store deployment", "User experience focus"],
-      color: "hsl(var(--icon-emerald))",
-    },
-    {
-      icon: Zap,
-      title: "Automations & Data",
-      description: "Streamline operations with custom automations, data pipelines, and intelligent workflows.",
-      features: ["Workflow automation", "Data processing", "API orchestration", "Business intelligence"],
-      color: "hsl(var(--icon-amber))",
-    },
-    {
-      icon: Wrench,
-      title: "Custom Solutions",
-      description: "Unique challenges require unique solutions. We build exactly what your business needs.",
-      features: ["Tailored development", "System integration", "Legacy modernization", "Consulting & strategy"],
-      color: "hsl(var(--icon-violet))",
-    }
-  ];
-
   return (
-    <section className="section-padding">
-      <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
-            What We <span className="bg-gradient-primary bg-clip-text text-transparent">Build</span>
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
-            From idea to launch, we handle the technical complexity so you can focus on growing your business.
+    <section id="services" className="section-padding bg-background-subtle">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex items-end justify-between gap-6 mb-14 md:mb-20 flex-wrap">
+          <div>
+            <div className="eyebrow mb-6">Services</div>
+            <h2 className="display-lg max-w-3xl">
+              What we <em className="italic text-primary">build.</em>
+            </h2>
+          </div>
+          <p className="text-ink-soft max-w-sm text-base md:text-lg">
+            Four practices, one team. Hire us end-to-end or drop us into a single hairy problem.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
-          {services.map((service, index) => (
-            <div 
-              key={index} 
-              className="glass-card group hover:shadow-elevated hover:glow-primary transition-all duration-500 cursor-pointer transform hover:-translate-y-1 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+        <div className="border-t border-foreground/20">
+          {services.map((s) => (
+            <a
+              key={s.n}
+              href="#contact"
+              className="group grid grid-cols-12 gap-4 md:gap-8 items-start border-b border-foreground/20 py-8 md:py-12 hover:bg-foreground hover:text-background transition-colors duration-500 px-2 md:px-4 -mx-2 md:-mx-4 rounded-none"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
-              <div className="flex items-start space-x-4 mb-5 md:mb-6">
-                <div className="flex-shrink-0 group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-300">
-                  <service.icon className="w-8 h-8 md:w-10 md:h-10" style={{ color: service.color }} strokeWidth={1.5} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-xl md:text-2xl font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
-                  <p className="text-sm md:text-base text-muted-foreground">{service.description}</p>
+              <div className="col-span-2 md:col-span-1 font-mono text-sm md:text-base text-foreground/60 group-hover:text-background/60 pt-2">
+                {s.n}
+              </div>
+              <div className="col-span-10 md:col-span-5">
+                <h3 className="font-display text-4xl sm:text-5xl md:text-6xl tracking-tight">
+                  {s.title}
+                </h3>
+              </div>
+              <div className="col-span-12 md:col-span-5 pt-2 md:pt-3">
+                <p className="text-base md:text-lg leading-relaxed text-ink-soft group-hover:text-background/80 mb-4">
+                  {s.desc}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {s.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="font-mono text-[11px] uppercase tracking-wider px-3 py-1 rounded-full border border-foreground/20 group-hover:border-background/30"
+                    >
+                      {t}
+                    </span>
+                  ))}
                 </div>
               </div>
-              
-              <ul className="space-y-2.5 md:space-y-3">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-sm md:text-base group-hover:text-foreground transition-colors duration-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"></div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
+              <div className="col-span-12 md:col-span-1 flex md:justify-end pt-2 md:pt-3">
+                <ArrowUpRight className="w-7 h-7 md:w-8 md:h-8 transition-transform duration-500 group-hover:rotate-45" />
+              </div>
+            </a>
           ))}
         </div>
       </div>
