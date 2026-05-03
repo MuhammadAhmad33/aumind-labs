@@ -23,7 +23,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				inter: ['Inter', 'sans-serif'],
+				inter: ['Geist', 'Inter', 'sans-serif'],
+				display: ['Instrument Serif', 'serif'],
+				mono: ['Geist Mono', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -34,9 +36,10 @@ export default {
 					subtle: 'hsl(var(--background-subtle))',
 				},
 				foreground: 'hsl(var(--foreground))',
-				glass: {
-					DEFAULT: 'hsl(var(--glass))',
-					border: 'hsl(var(--glass-border))',
+				paper: 'hsl(var(--paper))',
+				ink: {
+					DEFAULT: 'hsl(var(--ink))',
+					soft: 'hsl(var(--ink-soft))',
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
